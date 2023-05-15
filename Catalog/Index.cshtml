@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PetShopApp.Models.Animal>
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h1 calss="h1">Catalog</h1>
+
+<div>
+    <partial model="null" name="_CategoryPartialView"></partial>
+</div>
+
+<div>
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <div class="col-2 col-sm text-info lead">
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </div>
+        <div class="col-2 col-sm text-info lead">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="col text-info lead">
+            @Html.DisplayNameFor(model => model.Age)
+        </div>
+        <div class="col-4 text-info lead">
+            @Html.DisplayNameFor(model => model.Comments)
+        </div>
+        <div class="col text-info lead">
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <div class="col-2 col-sm">
+            <img alt="Picture ;)" width="80px" height="80px" src="~/images/@item.PhotoUrl" />
+        </div>
+        <div class="col-2 col-sm">
+            @Html.DisplayFor(modelItem => item.Name)
+        </div>
+        <div class="col">
+            @Html.DisplayFor(modelItem => item.Age)
+        </div>
+        <div class="col-4">
+            @foreach (var i in item.Comments!)
+            {
+                @i.CommentText
+                <br />
+            }
+        </div>
+        <div class="col">
+            <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a>
+        </div>
+    </div>
+}

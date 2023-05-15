@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PetShopApp.Models.Animal>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1 class="h1">Top 2</h1>
+
+<div class="row border border-secondary rounded bg-dark text-light">
+    <div class="col-3 col-sm text-info lead">
+        @Html.DisplayNameFor(model => model.PhotoUrl)
+    </div>
+    <div class="col-3 col-sm text-info lead">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="col text-info lead">
+        @Html.DisplayNameFor(model => model.Age)
+    </div>
+    <div class="col-12 col-sm-4 text-info lead">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="col text-info lead">
+        @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="col text-info lead">
+        @Html.DisplayNameFor(model => model.Comments)
+    </div>
+</div>
+
+@foreach (var a in Model)
+{
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <div class="col-3 col-sm">
+            <img alt="Picture ;)" width="100px" height="100px" src="~/images/@a.PhotoUrl" />
+        </div>
+        <div class="col-3 col-sm">
+            @Html.DisplayFor(model => a.Name)
+        </div>
+        <div class="col">
+            @Html.DisplayFor(model => a.Age)
+        </div>
+        <div class="col-12 col-sm-4">
+            @Html.DisplayFor(model => a.Description)
+        </div>
+        <div class="col">
+            @a.Category!.Name
+        </div>
+        <div class="col">
+            @Html.DisplayFor(model => a.Comments!.Count)
+        </div>
+    </div>
+}

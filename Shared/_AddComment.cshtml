@@ -1,0 +1,12 @@
+﻿@model PetShopApp.Models.Comment
+
+<div>
+    <form asp-action="AddComment" method="post">
+        <input type="hidden" asp-for="AnimalId" />
+        <label asp-for="CommentText" class="control-label lead fw-bold"></label>
+        <textarea asp-for="CommentText" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="CommentText" class="text-danger"></span>
+        <br/>
+        <input onclick="this.form.submit()" class="btn btn-info" type="submit"/>
+    </form>
+</div>

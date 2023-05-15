@@ -1,0 +1,65 @@
+﻿@using PetShopApp.Models;
+@model PetShopApp.Models.Animal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1 class="text-info">Details</h1>
+
+<div>
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <input type="hidden" asp-for="Id" />
+        <div class="col-sm-2 text-info lead">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+        <div class="col-sm-2 text-info lead">
+            @Html.DisplayNameFor(model => model.Age)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </div>
+        <div class="col-sm-2 text-info lead">
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </div>
+        <div class="col-10">
+            <img alt="Picture ;)" width="80px" height="80px" src="~/images/@Model.PhotoUrl" />
+        </div>
+        <div class="col-sm-2 text-info lead">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <div class="col-sm-2 text-info lead">
+            @Html.DisplayNameFor(model => model.Category)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.Category!.Name)
+        </div>
+    </div>
+</div>
+
+<div class="row border border-secondary rounded bg-dark text-light">
+    <div class="col-sm-2 text-info lead">
+        @Html.DisplayNameFor(model => model.Comments)
+        @Html.ValidationMessageFor(model => model.Comments)
+    </div>
+    @foreach (var i in Model.Comments!)
+    {
+        <div class="col-sm-10">
+            @i.CommentText
+            <br />
+        </div>
+    }
+    <br />
+    <br />
+
+</div>
+<div>
+    <partial model="@new Comment{AnimalId=Model.Id}" name="_AddComment"></partial>
+    <a asp-action="Index" class="btn btn-danger">GO Back</a>
+</div>

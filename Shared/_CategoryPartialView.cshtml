@@ -1,0 +1,18 @@
+﻿@using PetShopApp.Models;
+@model Category
+
+@{
+    var catacories = ViewBag.catecories as IEnumerable<Category>;
+}
+<div>
+    <form asp-action="Index" class="categoriesForm fw-bold" method="post">
+        <label class="lead fw-bold" for="id">Please Select a Category</label>
+        <select class="dropdown btn btn-danger" asp-for="Id" onchange="$('.categoriesForm').submit()">
+            <option value="0">All Animals</option>
+            @foreach (var item in catacories!)
+            {
+                <option value="@item.Id">@item.Name</option>
+            }
+        </select>
+    </form>
+</div>

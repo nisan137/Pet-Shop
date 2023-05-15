@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PetShopApp.Models.Animal>
+
+@{
+    ViewBag.Title = "Administrator";
+}
+
+<h1 class="h1">Administrator</h1>
+
+<div>
+    <partial model="null" name="_CategoryPartialView"></partial>
+</div>
+
+<div class="position-relative">
+    <button class="btn btn-info position-absolute top-0 end-0 translate-middle-y">
+        @Html.ActionLink("Add Animal", "Create")
+    </button>
+</div>
+<br />
+
+<div>
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <div class="col text-info lead">
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </div>
+        <div class="col text-info lead">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+        <div class="col text-info lead">
+            @Html.DisplayNameFor(model => model.Age)
+        </div>
+        <div class="col text-info lead">
+            @Html.DisplayNameFor(model => model.Category)
+        </div>
+        <div class="col-12 col-sm-4 text-info lead">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="col text-info lead">
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="row border border-secondary rounded bg-dark text-light">
+        <div class="col">
+            <img id="img" alt="Picture ;)" width="100px" height="100px" src="~/images/@item.PhotoUrl" />
+        </div>
+        <div class="col">
+            @Html.DisplayFor(modelItem => item.Name)
+        </div>
+        <div class="col">
+            @Html.DisplayFor(modelItem => item.Age)
+        </div>
+        <div class="col">
+            @Html.DisplayFor(modelItem => item.Category!.Name)
+        </div>
+        <div class="col-12 col-sm-4">
+            @Html.DisplayFor(modelItem => item.Description)
+        </div>
+        <div class="col">
+            <a class="btn btn-light" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </div>
+    </div>
+}

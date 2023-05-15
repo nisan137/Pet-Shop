@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/styles/Style.css" rel="stylesheet" />
+    <script src="~/scripts/jquery.js"></script>
+</head>
+<body>
+    @await Html.PartialAsync("_NavBarPartialView")
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="~/scripts/bootstrap.bundle.js"></script>
+    <script src="~/scripts/bootstrap.js"></script>
+    <script src="~/scripts/popper.js"></script>
+    <script src="~/scripts/jquery-3.3.1.js"></script>
+    <script src="~/scripts/jquery.validate.min-1.17.0.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min-3.2.10.js"></script>
+</body>
+</html>

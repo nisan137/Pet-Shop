@@ -6,13 +6,15 @@ The Pet-Shop Application is a web-based application developed using C# MVC techn
 
 ## Features
 - On the Home page you can see the 2 animals that have the most comments.
+
 Home page:
 ![Screenshot 2023-05-15 at 15 39 19](https://github.com/nisan137/Pet-shop/assets/98767414/37d87751-892c-4dbc-a27d-406d1afe813d)
-<br/>
+
 Home page code:
 ![Screenshot 2023-05-15 at 15 59 34](https://github.com/nisan137/Pet-shop/assets/98767414/04ed80c8-c7dc-497d-bef1-7c10342a0cb9)
 
-- On the Catalog page you can see all the animals that are on the site, in addition you can see all the information that exists on them with the help of the "details" button
+- On the Catalog page you can see all the animals that are on the site,
+- in addition you can see all the information that exists on them with the help of the "details" button
 and adding a new comment.
 
 Catalog page:
@@ -39,9 +41,10 @@ Edit:
 Creat new:
 ![Screenshot 2023-05-15 at 15 40 43](https://github.com/nisan137/Pet-shop/assets/98767414/045c1c57-e709-4c3a-a54a-7da5e46c8e32)
 
-Admin pade code:
+Admin page code:
 ![Screenshot 2023-05-15 at 15 43 12](https://github.com/nisan137/Pet-shop/assets/98767414/ca50bcc6-9a83-44f0-9941-5cf249d3fee1)
-<br/>
+
+Admin page code:
 ![Screenshot 2023-05-15 at 15 43 27](https://github.com/nisan137/Pet-shop/assets/98767414/ff7f9fce-572a-4603-abf7-92e93396be96)
 
 
